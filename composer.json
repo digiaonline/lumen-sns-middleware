@@ -1,0 +1,39 @@
+{
+    "name": "digiaonline/lumen-sns-middleware",
+    "description": "Collection of middleware and helpers for dealing with AWS SNS notifications",
+    "keywords": ["aws", "sns", "lumen"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Stenvall",
+            "email": "sam.stenvall@digia.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/digiaonline/json-helpers.git"
+        }  
+    ],
+    "require": {
+        "aws/aws-php-sns-message-validator": "^1.4",
+        "illuminate/http": "^5.5",
+        "digiaonline/json-helpers": "dev-master",
+        "jalle19/laravel-lost-interfaces": "^1.1",
+        "illuminate/support": "^5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Digia\\Lumen\\SnsMiddleware\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Digia\\Lumen\\SnsMiddleware\\Tests\\": "tests/unit"
+        }
+    }
+}

@@ -1,0 +1,4 @@
+/vendor/
+/.idea
+/build/logs/clover.xml
+composer.phar
