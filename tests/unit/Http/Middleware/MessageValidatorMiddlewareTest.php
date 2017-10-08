@@ -21,7 +21,7 @@ class MessageValidatorMiddlewareTest extends TestCase
      */
     public function testInvalidMessage()
     {
-        $json               = $this->getResourceAsString('valid_SubscriptionConfirmation_message.json');
+        $json               = $this->getResourceAsString('SubscriptionConfirmation.json');
         $request            = new Request([], [], [], [], [], [], $json);
         $validationCallback = function () {
             return false;
@@ -39,7 +39,7 @@ class MessageValidatorMiddlewareTest extends TestCase
      */
     public function testValidMessage()
     {
-        $json               = $this->getResourceAsString('valid_SubscriptionConfirmation_message.json');
+        $json               = $this->getResourceAsString('SubscriptionConfirmation.json');
         $request            = new Request([], [], [], [], [], [], $json);
         $validationCallback = function () {
             return false;

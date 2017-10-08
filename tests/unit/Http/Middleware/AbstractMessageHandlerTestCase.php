@@ -53,7 +53,7 @@ abstract class AbstractMessageHandlerTestCase extends TestCase
      */
     public function testInapplicableRequest()
     {
-        $json    = $this->getResourceAsString('valid_Notification_message.json');
+        $json    = $this->getResourceAsString('Notification.json');
         $request = new Request([], [], [], [], [], [], $json);
 
         $className = $this->getMiddlewareClassName();

@@ -40,7 +40,7 @@ class MessageFactoryTest extends TestCase
      */
     public function testValidMessage()
     {
-        $json    = $this->getResourceAsString('valid_SubscriptionConfirmation_message.json');
+        $json    = $this->getResourceAsString('SubscriptionConfirmation.json');
         $request = new Request([], [], [], [], [], [], $json);
 
         $this->assertInstanceOf(Message::class, MessageFactory::createFromRequest($request));

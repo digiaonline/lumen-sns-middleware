@@ -16,7 +16,7 @@ class HandleUnsubscribeConfirmationMiddlewareTest extends AbstractMessageHandler
      */
     protected function getMessageResourceName(): string
     {
-        return 'valid_UnsubscribeConfirmation_message.json';
+        return 'UnsubscribeConfirmation.json';
     }
 
     /**
