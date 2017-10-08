@@ -2,6 +2,7 @@
 
 namespace Digia\Lumen\SnsMiddleware\Tests\Http\Middleware;
 
+use Digia\Lumen\SnsMiddleware\Http\Client\FileGetContentsHttpClient;
 use Digia\Lumen\SnsMiddleware\Http\Client\HttpClientInterface;
 use Digia\Lumen\SnsMiddleware\Tests\TestCase;
 use Illuminate\Http\Request;
@@ -44,6 +45,23 @@ abstract class AbstractMessageHandlerTestCase extends TestCase
         $middleware = new $className($httpClient);
         $this->assertInstanceOf(Response::class, $middleware->handle($request, function () {
 
+        }));
+    }
+
+    /**
+     * Tests that the middleware passes on the request when it doesn't apply
+     */
+    public function testInapplicableRequest()
+    {
+        $json    = $this->getResourceAsString('valid_Notification_message.json');
+        $request = new Request([], [], [], [], [], [], $json);
+
+        $className = $this->getMiddlewareClassName();
+
+        /** @var Middleware $middleware */
+        $middleware = new $className(new FileGetContentsHttpClient());
+        $this->assertTrue($middleware->handle($request, function () {
+            return true;
         }));
     }
 

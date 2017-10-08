@@ -48,9 +48,11 @@ abstract class AbstractMessageHandlerMiddleware implements Middleware
 
         if ($message['Type'] === $this->getMessageType()) {
             $this->httpClient->get((string)$message['SubscribeURL']);
+
+            // Terminate the chain, return a response directly
+            return new Response();
         }
 
-        // Terminate the chain, return a response directly
-        return new Response();
+        return $next($request);
     }
 }
