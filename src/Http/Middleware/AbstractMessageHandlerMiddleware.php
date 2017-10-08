@@ -46,7 +46,7 @@ abstract class AbstractMessageHandlerMiddleware implements Middleware
         $message = MessageFactory::createFromRequest($request);
 
         if ($message['Type'] === $this->getMessageType()) {
-            $this->httpClient->get($message['SubscribeURL']);
+            $this->httpClient->get((string)$message['SubscribeURL']);
         }
 
         return $next($request);
