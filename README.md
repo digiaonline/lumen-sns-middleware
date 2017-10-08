@@ -9,7 +9,7 @@ This library contains a collection of middleware and helpers for dealing with AW
 ## Features
 
 * a middleware for validating the signatures of SNS notifications
-* middlewares for transparently handling subscription and unsubscribe confirmations
+* middleware for transparently handling subscription and unsubscribe confirmations
 * a factory for creating SNS `Message` objects from HttpFoundation request objects (which Lumen uses)
 * a basic enum class for notification types
 
