@@ -6,6 +6,7 @@ use Closure;
 use Digia\Lumen\SnsMiddleware\Http\Client\HttpClientInterface;
 use Digia\Lumen\SnsMiddleware\MessageFactory;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Jalle19\Laravel\LostInterfaces\Http\Middleware\Middleware;
 
 /**
@@ -49,6 +50,7 @@ abstract class AbstractMessageHandlerMiddleware implements Middleware
             $this->httpClient->get((string)$message['SubscribeURL']);
         }
 
-        return $next($request);
+        // Terminate the chain, return a response directly
+        return new Response();
     }
 }

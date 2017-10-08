@@ -5,6 +5,7 @@ namespace Digia\Lumen\SnsMiddleware\Tests\Http\Middleware;
 use Digia\Lumen\SnsMiddleware\Http\Client\HttpClientInterface;
 use Digia\Lumen\SnsMiddleware\Tests\TestCase;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Jalle19\Laravel\LostInterfaces\Http\Middleware\Middleware;
 
 /**
@@ -41,9 +42,9 @@ abstract class AbstractMessageHandlerTestCase extends TestCase
 
         /** @var Middleware $middleware */
         $middleware = new $className($httpClient);
-        $middleware->handle($request, function () {
+        $this->assertInstanceOf(Response::class, $middleware->handle($request, function () {
 
-        });
+        }));
     }
 
     /**
