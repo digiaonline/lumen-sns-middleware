@@ -17,6 +17,7 @@
         }  
     ],
     "require": {
+        "php": ">=7.0",
         "aws/aws-php-sns-message-validator": "^1.4",
         "illuminate/http": "^5.5",
         "digiaonline/json-helpers": "dev-master",

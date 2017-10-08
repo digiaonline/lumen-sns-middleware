@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c4f3b328f5ef0e4acc9df32fcc1253c",
+    "content-hash": "57a04cf4dfe3184152e7808307aa4a66",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -2683,6 +2683,8 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.0"
+    },
     "platform-dev": []
 }

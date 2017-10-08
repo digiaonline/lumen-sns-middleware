@@ -15,7 +15,7 @@ This library contains a collection of middleware and helpers for dealing with AW
 
 ## Requirements
 
-* PHP >= 7.1
+* PHP >= 7.0
 
 ## Installation
 
