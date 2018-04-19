@@ -55,4 +55,4 @@ MIT
 
 ## Testing
 
-Run `vendor/bin/phpunit`
+Run `composer test`
